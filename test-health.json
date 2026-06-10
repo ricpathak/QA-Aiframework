@@ -1,0 +1,55 @@
+{
+	"src/tests/ui/generated/add-multiple-todos.spec.ts": {
+		"healCount": 3,
+		"lastHealed": "2026-05-25T16:02:22.172Z",
+		"healHistory": [
+			{
+				"date": "2026-05-25T16:02:22.172Z",
+				"fix": "Updated todoTitles locator in TodoPage from CSS selector '.todo-list' to getByTestId('todo-item') to target individual todo items instead of the container",
+				"healType": "selector",
+				"evidence": "Test error showed \"Buy groceriesWalk the dog\" as concatenated string instead of separate array items. browser_snapshot (ref=e12) confirmed .todo-list selects the UL container, causing all text to merge. Individual listitems have data-testid=\"todo-item\" which is #1 priority per framework conventions. Screenshot: test-results/tests-ui-generated-add-mul-5d698-iple-Todo-Items-in-Sequence-chromium/test-failed-1.png",
+				"productBehaviorChanged": false
+			},
+			{
+				"date": "2026-05-25T16:02:22.172Z",
+				"fix": "Updated todoTitles locator in TodoPage from CSS selector '.todo-list' to getByTestId('todo-item') to target individual todo items instead of the container",
+				"healType": "selector",
+				"evidence": "Test error showed \"Buy groceriesWalk the dog\" as concatenated string instead of separate array items. browser_snapshot (ref=e12) confirmed .todo-list selects the UL container, causing all text to merge. Individual listitems have data-testid=\"todo-item\" which is #1 priority per framework conventions. Screenshot: test-results/tests-ui-generated-add-mul-5d698-iple-Todo-Items-in-Sequence-chromium/test-failed-1.png",
+				"productBehaviorChanged": false
+			},
+			{
+				"date": "2026-05-25T16:02:22.172Z",
+				"fix": "Updated todoTitles locator in TodoPage from CSS selector '.todo-list' to getByTestId('todo-item') to target individual todo items instead of the container",
+				"healType": "selector",
+				"evidence": "Test error showed \"Buy groceriesWalk the dog\" as concatenated string instead of separate array items. browser_snapshot (ref=e12) confirmed .todo-list selects the UL container, causing all text to merge. Individual listitems have data-testid=\"todo-item\" which is #1 priority per framework conventions. Screenshot: test-results/tests-ui-generated-add-mul-5d698-iple-Todo-Items-in-Sequence-chromium/test-failed-1.png",
+				"productBehaviorChanged": false
+			}
+		],
+		"planSource": "specs/todomvc-test-plan.md",
+		"recommendation": null,
+		"baselineAssertionCount": 0
+	},
+	"src/tests/ui/generated/add-single-todo.spec.ts": {
+		"healCount": 2,
+		"lastHealed": "2026-05-25T16:50:00.000Z",
+		"healHistory": [
+			{
+				"date": "2026-05-25T16:09:01.965Z",
+				"fix": "Updated todoTitles locator from CSS selector '.todo-list' to getByTestId('todo-item') in page object",
+				"healType": "selector",
+				"evidence": "Page object todo-page.ts line 14 used CSS class selector page.locator('.todo-list') which violates framework conventions. Framework conventions (section: locators) specify: \"NEVER: CSS class selectors, XPath, or positional selectors\". Priority order requires data-test attribute first. The page object already had this.todoItems using getByTestId('todo-item') which properly targets the same elements.",
+				"productBehaviorChanged": false
+			},
+			{
+				"date": "2026-05-25T16:50:00.000Z",
+				"fix": "Updated todoTitles locator from CSS selector '.todo-list > li .views label' to getByTestId('todo-item') in page object",
+				"healType": "selector",
+				"evidence": "DOM snapshot from error-context.md shows todo text 'Buy groceries' is in generic element (ref=e16), not in '.views label' element. CSS selector '.todo-list > li .views label' resolved to 0 elements. Framework conventions require getByTestId as first priority. Changed page.locator('.todo-list > li .views label') to this.page.getByTestId('todo-item') to properly target todo items using data-testid attribute. Screenshot: test-results/tests-ui-generated-add-sin-1f6d9-dd-a-Single-Valid-Todo-Item-chromium/test-failed-1.png",
+				"productBehaviorChanged": false
+			}
+		],
+		"planSource": "specs/todomvc-test-plan.md",
+		"recommendation": null,
+		"baselineAssertionCount": 0
+	}
+}

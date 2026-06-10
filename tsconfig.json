@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es6",
+		"sourceMap": true,
+		"strictNullChecks": true,
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"skipLibCheck": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+		"baseUrl": "./",
+		"paths": {
+			"*": ["./src/*"],
+			"@utils/*": ["./utils/*"]
+		},
+		"outDir": "./dist",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitAny": true,
+		"strict": true,
+		"declaration": false,
+		"experimentalDecorators": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"typeRoots": ["node_modules/@types"],
+		"ignoreDeprecations": "6.0"
+	},
+	"include": ["**/*.ts", "playwright.config.ts"],
+	"exclude": ["node_modules", "dist", "mcp-server"]
+}

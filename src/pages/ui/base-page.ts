@@ -1,10 +1,14 @@
-import { Locator, Page, expect } from "@playwright/test";
+import { Locator, Page, expect, test } from "@playwright/test";
 
 export class BasePage {
 	readonly page: Page;
 
 	constructor(page: Page) {
 		this.page = page;
+	}
+
+	protected async step<T>(name: string, fn: () => Promise<T>): Promise<T> {
+		return test.step(name, fn);
 	}
 
 	async navigate(url: string) {

@@ -6,6 +6,9 @@ mcp-server/node_modules/
 /playwright/.cache/
 environments/*
 !environments/example.env
+!environments/local.env
+!environments/dev.env
+!environments/qa.env
 .env
 logs/
 reports/

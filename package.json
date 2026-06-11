@@ -1,8 +1,7 @@
 {
-	"name": "playwright-typescript-template",
+	"name": "qa-aiframework",
 	"version": "1.0.0",
-	"description": "��#\u0000 \u0000p\u0000l\u0000a\u0000y\u0000w\u0000r\u0000i\u0000g\u0000h\u0000t\u0000-\u0000t\u0000y\u0000p\u0000e\u0000s\u0000c\u0000r\u0000i\u0000p\u0000t\u0000-\u0000t\u0000e\u0000m\u0000p\u0000l\u0000a\u0000t\u0000e\u0000\r\u0000 \u0000",
-	"main": "index.js",
+	"description": "AI-augmented QA engineering platform — Playwright + TypeScript + MCP agent pipeline for automated test planning, generation, execution, and self-healing",
 	"scripts": {
 		"setup": "npm ci && npx playwright install && npm run mcp:build",
 		"prettier": "npx prettier --check .",
@@ -12,6 +11,7 @@
 		"test": "npx playwright test",
 		"test:local": "npx cross-env NODE_ENV=local playwright test",
 		"test:dev": "npx cross-env NODE_ENV=dev playwright test",
+		"test:qa": "npx cross-env NODE_ENV=qa playwright test",
 		"test:headed": "npx playwright test --headed",
 		"test:ui": "npx playwright test --ui",
 		"test:debug": "npx playwright test --debug",
@@ -19,11 +19,10 @@
 		"test:custom": "ts-node utils/run-custom-tests.ts",
 		"test:report:playwright": "playwright show-report reports/playwright-report",
 		"test:report:custom": "open-cli reports/index.html",
-		"test:results": "npx playwright test --reporter=json 2>/dev/null | node -e \"process.stdin.pipe(require('fs').createWriteStream('test-results/results.json'))\"",
 		"validate:generated": "ts-node utils/validate-generated-tests.ts",
 		"mcp:build": "cd mcp-server && npm install && npm run build",
 		"mcp:start": "node mcp-server/dist/index.js",
-		"prepare": "husky && husky install"
+		"prepare": "husky install"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx,mjs}": [
@@ -33,15 +32,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/twinklejoshi/ai-agent-playwright-typescript-template.git"
+		"url": "git+https://github.com/ricpathak/qa-aiframework.git"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"keywords": ["playwright", "typescript", "test-automation", "mcp", "ai-agents", "qa", "page-object-model"],
+	"author": "ricpathak",
+	"license": "Apache-2.0",
 	"bugs": {
-		"url": "https://github.com/twinklejoshi/ai-agent-playwright-typescript-template/issues"
+		"url": "https://github.com/ricpathak/qa-aiframework/issues"
 	},
-	"homepage": "https://github.com/twinklejoshi/ai-agent-playwright-typescript-template#readme",
+	"homepage": "https://github.com/ricpathak/qa-aiframework#readme",
 	"devDependencies": {
 		"@eslint/js": "^9.24.0",
 		"@playwright/test": "^1.59.1",

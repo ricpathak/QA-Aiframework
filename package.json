@@ -36,7 +36,7 @@
 	},
 	"keywords": ["playwright", "typescript", "test-automation", "mcp", "ai-agents", "qa", "page-object-model"],
 	"author": "ricpathak",
-	"license": "Apache-2.0",
+	"license": "UNLICENSED",
 	"bugs": {
 		"url": "https://github.com/ricpathak/qa-aiframework/issues"
 	},

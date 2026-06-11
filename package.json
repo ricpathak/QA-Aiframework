@@ -21,6 +21,9 @@
 		"test:report:custom": "open-cli reports/index.html",
 		"validate:generated": "ts-node utils/validate-generated-tests.ts",
 		"confluence:fetch": "ts-node utils/confluence-to-md.ts",
+		"excel:fetch": "ts-node utils/excel-to-md.ts",
+		"credentials:encrypt": "ts-node utils/encrypt-credentials.ts",
+		"credentials:verify": "ts-node utils/encrypt-credentials.ts --verify",
 		"mcp:build": "cd mcp-server && npm install && npm run build",
 		"mcp:start": "node mcp-server/dist/index.js",
 		"prepare": "husky install"
@@ -66,6 +69,7 @@
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.4.7",
 		"inquirer": "^12.5.2",
+		"exceljs": "^4.4.0",
 		"turndown": "^7.2.0"
 	}
 }

@@ -20,6 +20,7 @@
 		"test:report:playwright": "playwright show-report reports/playwright-report",
 		"test:report:custom": "open-cli reports/index.html",
 		"validate:generated": "ts-node utils/validate-generated-tests.ts",
+		"confluence:fetch": "ts-node utils/confluence-to-md.ts",
 		"mcp:build": "cd mcp-server && npm install && npm run build",
 		"mcp:start": "node mcp-server/dist/index.js",
 		"prepare": "husky install"
@@ -57,12 +58,14 @@
 		"prettier": "^3.5.3",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.8.3",
-		"typescript-eslint": "^8.29.1"
+		"typescript-eslint": "^8.29.1",
+		"@types/turndown": "^5.0.5"
 	},
 	"dependencies": {
 		"axios": "^1.9.0",
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.4.7",
-		"inquirer": "^12.5.2"
+		"inquirer": "^12.5.2",
+		"turndown": "^7.2.0"
 	}
 }

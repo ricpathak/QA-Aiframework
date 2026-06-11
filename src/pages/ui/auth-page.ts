@@ -1,4 +1,5 @@
 import { Page } from "@playwright/test";
+import { Step } from "@utils/step-decorator";
 import { BasePage } from "./base-page";
 
 export class AuthPage extends BasePage {
@@ -14,6 +15,7 @@ export class AuthPage extends BasePage {
 		super(page);
 	}
 
+	@Step("Login with credentials")
 	async login(username: string, password: string): Promise<void> {
 		await this.navigate(this.loginUrl);
 		await this.usernameInput.fill(username);
@@ -21,6 +23,7 @@ export class AuthPage extends BasePage {
 		await this.submitButton.click();
 	}
 
+	@Step("Login with environment credentials")
 	async loginWithEnvCredentials(): Promise<void> {
 		const username = process.env.APP_USERNAME;
 		const password = process.env.APP_PASSWORD;
@@ -30,10 +33,12 @@ export class AuthPage extends BasePage {
 		await this.login(username, password);
 	}
 
+	@Step()
 	async expectLoginError(message: string): Promise<void> {
 		await this.expectToContainText(this.errorMessage, message);
 	}
 
+	@Step()
 	async expectLoggedIn(expectedUrl?: RegExp | string): Promise<void> {
 		if (expectedUrl) {
 			await this.page.waitForURL(expectedUrl);

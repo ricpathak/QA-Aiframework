@@ -24,11 +24,9 @@
 		"noImplicitAny": true,
 		"strict": true,
 		"declaration": false,
-		"experimentalDecorators": true,
 		"noImplicitOverride": true,
 		"noImplicitReturns": true,
-		"typeRoots": ["node_modules/@types"],
-		"ignoreDeprecations": "6.0"
+		"typeRoots": ["node_modules/@types"]
 	},
 	"include": ["**/*.ts", "playwright.config.ts"],
 	"exclude": ["node_modules", "dist", "mcp-server"]
